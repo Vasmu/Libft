@@ -6,7 +6,7 @@
 #    By: eva <eva@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/29 18:12:40 by evsuits           #+#    #+#              #
-#    Updated: 2023/07/13 23:45:56 by eva              ###   ########.fr        #
+#    Updated: 2023/07/13 23:54:08 by eva              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,11 +68,11 @@ OBJSB       := $(SRCSB:%.c=$(BUILD_DIR)/%.o)
 
 DIR_DUP      = mkdir -p $(@D)
 
-# DEPS        := $(OBJS:.o=.d)
+DEPS        := $(OBJS:.o=.d)
 
 $(BUILD_DIR)/%.o: %.c
 	@$(DIR_DUP)
-	$(CC) $(CFLAGS) -c  -o $@ $<
+	$(CC) $(CFLAGS) -MMD -c  -o $@ $<
 
 all: $(NAME)
 
@@ -100,3 +100,5 @@ malloc_test: $(OBJS)
 
 
 .PHONY: clean fclean all re
+
+-include $(DEPS)
