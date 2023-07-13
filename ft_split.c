@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: evsuits <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: eva <eva@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 18:49:54 by evsuits           #+#    #+#             */
-/*   Updated: 2022/01/05 15:05:52 by evsuits          ###   ########.fr       */
+/*   Updated: 2023/07/13 23:32:04 by eva              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static char	**ft_free(char **res, size_t i)
 	return (NULL);
 }
 
-static char	*ft_strndup(char const *s, int word_size)
+char	*ft_strndup(char const *s, int word_size)
 {
 	char	*word;
 	int		j;
